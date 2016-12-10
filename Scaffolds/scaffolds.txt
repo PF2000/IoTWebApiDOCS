@@ -1,0 +1,12 @@
+#School - Não é preciso colocar o campo id é colocado sozinho 
+rails g scaffold School name:string country:string distric:string  city:string county:string postCode:string addressDetails:string 
+
+#Course - references para criar chaves estrangeiras
+rails g scaffold Course name:string schools:references
+
+#Discipline
+rails generate scaffold Discipline name:string
+
+#Ligação entre as entidades
+#É necessário adicionar "has_and_belongs_to_many :disciplines" e "has_and_belongs_to_many :courses" nas classes
+rails g migration CreateJoinTableCourseDiscipline course discipline
