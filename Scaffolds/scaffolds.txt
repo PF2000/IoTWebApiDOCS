@@ -10,3 +10,6 @@ rails generate scaffold Discipline name:string
 #Ligação entre as entidades
 #É necessário adicionar "has_and_belongs_to_many :disciplines" e "has_and_belongs_to_many :courses" nas classes
 rails g migration CreateJoinTableCourseDiscipline course discipline
+
+#Project
+rails g scaffold Project name:string description:string grade:integer discipline:references
