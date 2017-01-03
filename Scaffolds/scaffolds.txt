@@ -13,3 +13,19 @@ rails g migration CreateJoinTableCourseDiscipline course discipline
 
 #Project
 rails g scaffold Project name:string description:string grade:integer discipline:references
+
+#SchoolClass
+rails g scaffold SchoolClass description:string startTime:datetime endTime:datetime classLetter:string classType:string professor:string discipline:references room:references
+
+#SchoolYear
+rails g scaffold SchoolYear description:string startTime:datetime endTime:datetime
+
+#Relação com Course
+rails g migration CreateJoinTableSchoolYearCourse course school_year
+
+#Relação com SchoolClass
+rails g migration AddReferenceToSchoolClass school_year:references
+
+#Relação com Project
+rails g migration AddReferenceToProject school_year:references
+
