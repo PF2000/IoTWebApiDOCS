@@ -29,3 +29,8 @@ rails g migration AddReferenceToSchoolClass school_year:references
 #Relação com Project
 rails g migration AddReferenceToProject school_year:references
 
+#Summary
+rails g scaffold Summary number_students:integer description:string date:datetime school_class:references
+
+#Attach
+rails g scaffold Attach name:string data:string data_type:string description:string date:datetime project:references
